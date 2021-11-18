@@ -19,17 +19,17 @@ help:
 
 fast: | build
 	$(LATEXCMD) content/kactl.tex </dev/null
-	cp build/kactl.pdf kactl.pdf
+	cp build/kactl.pdf nus-tsp.pdf
 
 kactl: test-session.pdf | build
 	$(LATEXCMD) content/kactl.tex && $(LATEXCMD) content/kactl.tex
-	cp build/kactl.pdf kactl.pdf
+	cp build/kactl.pdf nus-tsp.pdf
 
 clean:
 	cd build && rm -f kactl.aux kactl.log kactl.tmp kactl.toc kactl.pdf kactl.ptc
 
 veryclean: clean
-	rm -f kactl.pdf test-session.pdf
+	rm -f nus-tsp.pdf test-session.pdf
 
 .PHONY: help fast kactl clean veryclean
 
